@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Hotel {
     private String name;
-    private ArrayList<Room> rooms;
+    private ArrayList<Room> rooms = new ArrayList<>();
     private Integer pools;
     private Integer gyms;
-    private ArrayList<Reservation> reservations;
+    private ArrayList<Reservation> reservations = new ArrayList<>();
 
     public Hotel(String name, Integer pools, Integer gyms) {
         this.name = name;
@@ -35,10 +35,6 @@ public class Hotel {
         return reservations;
     }
 
-    public Hotel() {
-        reservations = new ArrayList<>();
-        rooms = new ArrayList<>();
-    }
 
     public void reserveRoom(int roomNumber, Guest guest, String arrivalDate, int nights) {
         Reservation reservation = new Reservation();
@@ -53,7 +49,6 @@ public class Hotel {
 
     public void addRoom(Room room) {
         room.getNumber();
-        room.getBedType();
         room.getStatus();
 
         rooms.add(room);
